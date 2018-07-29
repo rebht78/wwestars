@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Card from './Card'
+import 'tachyons';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
