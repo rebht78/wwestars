@@ -8,7 +8,9 @@ class SearchBox extends Component
                 <input
                     className='pa3 ba b--green bg-lightest-blue' 
                     type='search' 
-                    placeholder='Enter Superstar Name'/>
+                    placeholder='Enter Superstar Name'
+                    onInput={this.props.filter}
+                    />
             </div>
         );
     }
