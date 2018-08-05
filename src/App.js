@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
 import {superstars} from './superstars';
+import './App.css';
 
 class App extends Component
 {
@@ -18,8 +19,8 @@ class App extends Component
         });
         return (
             <div className='tc'>
-                <h1>WWE Robot SuperStars</h1>
-                <SearchBox filter={this.onInputChange}/>
+                <h1 className="heading">WWE Robot SuperStars</h1>
+                <SearchBox className="searchbox" filter={this.onInputChange}/>
                 <CardList superstars={filteredSuperStar}/>
             </div>  
         );
