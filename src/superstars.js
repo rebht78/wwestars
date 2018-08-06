@@ -12,7 +12,7 @@ export const superstars = [
     {
         name:"Roman Reigns",
         email:"roman@wwe.com",
-        rank:2
+        rank:5
     },
     {
         name:"Seth Rollins",
@@ -23,6 +23,11 @@ export const superstars = [
         name:"Dean Ambrose",
         email:"deank@wwe.com",
         rank:4
+    },
+    {
+        name:"A J Styles",
+        email:"phenomenalone@wwe.com",
+        rank:2
     },
     {
         name:"The Miz",

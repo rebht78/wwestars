@@ -9,9 +9,12 @@ class App extends Component
     constructor() {
         super();
         this.state = {
-            superstars:superstars,
+            superstars:[],
             searchField:''
         }
+    }
+    componentDidMount() {
+        this.setState({superstars:superstars});
     }
     render() {
         const filteredSuperStar = this.state.superstars.filter((superstar) => {
