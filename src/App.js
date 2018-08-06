@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
+import ScrollBar from './ScrollBar';
 import {superstars} from './superstars';
 import './App.css';
 
@@ -24,7 +25,9 @@ class App extends Component
             <div className='tc'>
                 <h1 className="heading">WWE Robot SuperStars</h1>
                 <SearchBox className="searchbox" filter={this.onInputChange}/>
-                <CardList superstars={filteredSuperStar}/>
+                <ScrollBar>
+                    <CardList superstars={filteredSuperStar}/>
+                </ScrollBar>
             </div>  
         );
     }
