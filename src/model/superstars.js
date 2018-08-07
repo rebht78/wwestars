@@ -1,37 +1,37 @@
 export const superstars = [
     {
         name:"The Rock",
-        email:"rock@wwe.com",
+        email:"rock@robostar.com",
         rank:0
     },
     {
         name:"The Undertaker",
-        email:"theundertaker@wwe.com",
+        email:"theundertaker@robostar.com",
         rank:1
     },
     {
         name:"Roman Reigns",
-        email:"roman@wwe.com",
-        rank:5
+        email:"roman@robostar.com",
+        rank:2
     },
     {
         name:"Seth Rollins",
-        email:"seth@wwe.com",
+        email:"seth@robostar.com",
         rank:3
     },
     {
         name:"Dean Ambrose",
-        email:"deank@wwe.com",
+        email:"deank@robostar.com",
         rank:4
     },
     {
         name:"A J Styles",
-        email:"phenomenalone@wwe.com",
-        rank:2
+        email:"phenomenalone@robostar.com",
+        rank:5
     },
     {
         name:"The Miz",
-        email:"miz@wwe.com",
+        email:"miz@robostar.com",
         rank:100
     }
 ];
