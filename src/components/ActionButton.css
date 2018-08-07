@@ -1,4 +1,38 @@
 .actiondiv
 {
-    float:left;
+    display: inline-block;
+}
+.actionbutton
+{
+    outline:none;
+    border:none;
+    cursor:pointer;
+    display:block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-left:20px;
+    padding-right: 20px;
+    padding-top:7px;
+    padding-bottom: 7px;
+    position:relative;
+    color:white;
+    background:#FCAD26;
+    font-size:1.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 20px;
+    box-shadow: 0 6px #EFA424;
+}
+.actionbutton:hover
+{
+    box-shadow: 0 4px #EFA424;
+    top:2px;
+}
+.actionbutton:active
+{
+    box-shadow: none;
+    top:6px;
+}
+.actiontext
+{
+    text-align: center;
 }

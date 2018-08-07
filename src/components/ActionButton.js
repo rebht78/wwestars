@@ -6,7 +6,11 @@ class ActionButton extends Component
     render() {
         return (
             <div className="actiondiv">
-                <button>{this.props.btnText}</button>
+                <button className="actionbutton">
+                    <span className="actinotext">
+                        {this.props.btnText}
+                    </span>
+                </button>
             </div>
         );
     }
