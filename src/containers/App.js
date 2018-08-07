@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import ScrollBar from '../components/ScrollBar';
+import ActionButton from '../components/ActionButton';
 import {superstars} from '../model/superstars';
 import './App.css';
 
@@ -22,9 +23,12 @@ class App extends Component
             return superstar.name.toLowerCase().includes(this.state.searchField.toLowerCase());
         });
         return (
-            <div className='tc'>
+            <div className="tc">
                 <h1 className="heading">WWE Robot SuperStars</h1>
-                <SearchBox className="searchbox" filter={this.onInputChange}/>
+                <div className="operationtab">
+                    <SearchBox filter={this.onInputChange}/>
+                    <ActionButton btnText="Create Robot Superstars" />
+                </div>
                 <ScrollBar>
                     <CardList superstars={filteredSuperStar}/>
                 </ScrollBar>
