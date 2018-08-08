@@ -27,7 +27,7 @@ class App extends Component
                 <h1 className="heading">WWE Robot SuperStars</h1>
                 <div className="operationtab">
                     <SearchBox filter={this.onInputChange}/>
-                    <ActionButton btnText="Create Robot Superstars" />
+                    <ActionButton clickhandler={this.onActionButtonClick} btnText="Create Robot Superstars" />
                 </div>
                 <ScrollBar>
                     <CardList superstars={filteredSuperStar}/>
@@ -37,6 +37,9 @@ class App extends Component
     }
     onInputChange = (event) => {
         this.setState({searchField: event.target.value});
+    }
+    onActionButtonClick = (event) => {
+        alert("Feature coming soon!, learning how to do that ;) ");
     }
 }
 

@@ -6,8 +6,8 @@ class ActionButton extends Component
     render() {
         return (
             <div className="actiondiv">
-                <button className="actionbutton">
-                    <span className="actinotext">
+                <button onClick={this.props.clickhandler} className="actionbutton">
+                    <span className="actiontext">
                         {this.props.btnText}
                     </span>
                 </button>
