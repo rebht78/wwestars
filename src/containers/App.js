@@ -12,7 +12,7 @@ class App extends Component
         super();
         this.state = {
             superstars:[],
-            searchField:''
+            searchField:'',
         }
     }
     componentDidMount() {
@@ -30,10 +30,13 @@ class App extends Component
                     <ActionButton clickhandler={this.onActionButtonClick} btnText="Create Robot Superstars" />
                 </div>
                 <ScrollBar>
-                    <CardList superstars={filteredSuperStar}/>
+                    <CardList superstars={filteredSuperStar} clickhandler={this.onVoteButtonClick}/>
                 </ScrollBar>
             </div>  
         );
+    }
+    onVoteButtonClick = (event,value) => {
+        console.log('It was clicked : '+value);
     }
     onInputChange = (event) => {
         this.setState({searchField: event.target.value});

@@ -14,14 +14,11 @@ class Card extends Component {
                         <p>{this.props.email}</p>
                     </div>
                 </div>
-                <ActionButton btnText="Vote Now!" clickhandler={this.onVoteButtonClick}/>
+                <ActionButton btnText="Vote Now!" clickhandler={this.props.clickhandler}/>
             </div>
         );
     }
-    onVoteButtonClick = (event) => {
-        console.log('It was clicked : '+this.props.id);
-        
-    }
+    
 }
 
 export default Card;
