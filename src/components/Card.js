@@ -6,7 +6,6 @@ class Card extends Component {
     render() {
         return (
             <div className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5">
-                <h2>Votes: {this.props.votes}</h2>
                 <div>
                     <img src={this.props.pic} alt='Superstar'/>
                     <div>
@@ -15,6 +14,7 @@ class Card extends Component {
                     </div>
                 </div>
                 <ActionButton btnText="Vote Now!" clickhandler={this.increaseVote}/>
+                <h2>Votes: {this.props.votes}</h2>
             </div>
         );
     }
