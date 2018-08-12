@@ -8,7 +8,7 @@ class Card extends Component {
         return (
             <div className="tc bg-light-green dib br3 pa3 ma3 grow bw2 shadow-5">
                     <div className="deletediv">
-                        <ActionButton btnText="X"/>
+                        <ActionButton clickhandler={this.deleteStar} btnText="X"/>
                     </div>    
                     <div>
                         <img src={this.props.pic} alt='Superstar'/>
@@ -26,6 +26,10 @@ class Card extends Component {
     
     increaseVote = (event) => {
         this.props.clickhandler(this.props.id);
+    };
+
+    deleteStar = (event) => {
+        alert("Delete Feature coming soon!");
     };
 }
 
