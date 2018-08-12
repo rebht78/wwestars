@@ -35,8 +35,19 @@ class App extends Component
             </div>  
         );
     }
-    onVoteButtonClick = (event,value) => {
-        console.log('It was clicked : '+value);
+    onVoteButtonClick = (value) => {
+        const superstars = this.state.superstars;
+
+        const updatedSuperStars = superstars.map((superstar) => {
+            if (superstar.id === value) {
+                return Object.assign({},superstar,{
+                    votes:superstar.votes + 1
+                });
+            } else {
+                return superstar;
+            }
+        });
+        this.setState({superstars:updatedSuperStars});
     }
     onInputChange = (event) => {
         this.setState({searchField: event.target.value});
