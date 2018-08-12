@@ -13,6 +13,7 @@ class App extends Component
         this.state = {
             superstars:[],
             searchField:'',
+            disabledButton:false
         }
     }
     componentDidMount() {
@@ -27,7 +28,7 @@ class App extends Component
                 <h1 className="heading">WWE Robot SuperStars</h1>
                 <div className="operationtab">
                     <SearchBox filter={this.onInputChange}/>
-                    <ActionButton clickhandler={this.onActionButtonClick} btnText="Create Robot Superstars" />
+                    <ActionButton isdisable={this.state.disabledButton} clickhandler={this.onActionButtonClick} btnText="Create Robot Superstars" />
                 </div>
                 <ScrollBar>
                     <CardList superstars={filteredSuperStar} clickhandler={this.onVoteButtonClick}/>

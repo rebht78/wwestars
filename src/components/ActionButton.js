@@ -6,7 +6,7 @@ class ActionButton extends Component
     render() {
         return (
             <div className="actiondiv">
-                <button onClick={this.props.clickhandler} className="actionbutton">
+                <button disabled={this.props.isdisable} onClick={this.props.clickhandler} className="actionbutton">
                     <span className="actiontext">
                         {this.props.btnText}
                     </span>
