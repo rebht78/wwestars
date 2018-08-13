@@ -7,9 +7,14 @@ class Card extends Component {
     render() {
         return (
             <div className="tc bg-light-green dib br3 pa3 ma3 bw2 shadow-5">
+                <div>
                     <div className="deletediv">
                         <ActionButton clickhandler={this.deleteStar} btnText="X"/>
-                    </div>    
+                    </div>  
+                    <div className="updatediv">
+                        <ActionButton btnText="U"/>
+                    </div>  
+                </div>
                     <div>
                         <img src={this.props.pic} alt='Superstar'/>
                         <div>
