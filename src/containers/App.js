@@ -31,7 +31,7 @@ class App extends Component
                     <ActionButton isdisable={this.state.disabledButton} clickhandler={this.onActionButtonClick} btnText="Create Robot Superstars" />
                 </div>
                 <ScrollBar>
-                    <CardList superstars={filteredSuperStar} clickhandler={this.onVoteButtonClick}/>
+                    <CardList deletehandler={this.onDeleteButtonClick} superstars={filteredSuperStar} clickhandler={this.onVoteButtonClick}/>
                 </ScrollBar>
             </div>  
         );
@@ -49,6 +49,15 @@ class App extends Component
             }
         });
         this.setState({superstars:updatedSuperStars});
+    }
+    onDeleteButtonClick = (value) => {
+        const superstars = this.state.superstars;
+
+        const updatedSuperStars = superstars.filter((superstar) => {
+            return superstar.id !== value;
+        });
+
+        this.setState({superstars: updatedSuperStars});
     }
     onInputChange = (event) => {
         this.setState({searchField: event.target.value});

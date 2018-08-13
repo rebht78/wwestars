@@ -29,7 +29,7 @@ class Card extends Component {
     };
 
     deleteStar = (event) => {
-        alert("Delete Feature coming soon!");
+        this.props.deletehandler(this.props.id);
     };
 }
 
