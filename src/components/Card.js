@@ -12,7 +12,7 @@ class Card extends Component {
                         <ActionButton clickhandler={this.deleteStar} btnText="X"/>
                     </div>  
                     <div className="updatediv">
-                        <ActionButton btnText="U"/>
+                        <ActionButton clickhandler={this.updateStar} btnText="U"/>
                     </div>  
                 </div>
                     <div>
@@ -35,6 +35,10 @@ class Card extends Component {
 
     deleteStar = (event) => {
         this.props.deletehandler(this.props.id);
+    };
+
+    updateStar = (event) => {
+        this.props.updatehandler(this.props.id);
     };
 }
 
