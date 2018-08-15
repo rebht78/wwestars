@@ -7,11 +7,11 @@ class SuperstarForm extends Component
             <div>
                 <div>
                     <label>Name:</label>
-                    <input type="text"/>
+                    <input type="text" defaultValue={this.props.name}/>
                 </div>
                 <div>
                     <label>Email:</label>
-                    <input type="text"/>
+                    <input type="text" defaultValue={this.props.email}/>
                 </div>
                 <div>
                     <button>Update</button>

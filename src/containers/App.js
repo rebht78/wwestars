@@ -3,7 +3,7 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import ScrollBar from '../components/ScrollBar';
 import ActionButton from '../components/ActionButton';
-import {superstars} from '../model/superstars';
+// import {superstars} from '../model/superstars';
 import './App.css';
 
 class App extends Component
@@ -17,7 +17,13 @@ class App extends Component
         }
     }
     componentDidMount() {
-        this.setState({superstars:superstars});
+        fetch('http://localhost:3020/api/superstars', {
+            headers: {
+                Accept:'Application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(superstars => this.setState({superstars:superstars}));
     }
     render() {
         const filteredSuperStar = this.state.superstars.filter((superstar) => {
