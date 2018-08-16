@@ -15,9 +15,7 @@ class Card extends Component {
         if (this.state.isOpen)
         {
             return(
-                <div className="tc bg-light-green dib br3 pa3 ma3 bw2 shadow-5">
                     <SuperstarForm />
-                </div>
             );
         }
         else {
