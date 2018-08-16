@@ -21,3 +21,5 @@ class SuperstarForm extends Component
         );
     }
 }
+
+export default SuperstarForm;
