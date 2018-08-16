@@ -13,7 +13,7 @@ class App extends Component
         this.state = {
             superstars:[],
             searchField:'',
-            disabledButton:false
+            disabledButton:false,
         }
     }
     componentDidMount() {
@@ -26,6 +26,7 @@ class App extends Component
         .then(superstars => this.setState({superstars:superstars}));
     }
     render() {
+        
         const filteredSuperStar = this.state.superstars.filter((superstar) => {
             return superstar.name.toLowerCase().includes(this.state.searchField.toLowerCase());
         });
@@ -37,7 +38,7 @@ class App extends Component
                     <ActionButton isdisable={this.state.disabledButton} clickhandler={this.onActionButtonClick} btnText="Create Robot Superstars" />
                 </div>
                 <ScrollBar>
-                    <CardList updatehandler={this.onUpdateButtonClick} deletehandler={this.onDeleteButtonClick} superstars={filteredSuperStar} clickhandler={this.onVoteButtonClick}/>
+                    <CardList deletehandler={this.onDeleteButtonClick} superstars={filteredSuperStar} clickhandler={this.onVoteButtonClick}/>
                 </ScrollBar>
             </div>  
         );
@@ -64,9 +65,6 @@ class App extends Component
         });
 
         this.setState({superstars: updatedSuperStars});
-    }
-    onUpdateButtonClick = (value) => {
-        alert("Super Star ID is "+value);
     }
     onInputChange = (event) => {
         this.setState({searchField: event.target.value});
