@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import Card from './Card';
 
+
 class CardList extends Component
 {
+   
     render() {
         const cardArray = this.props.superstars.map((item,i) => {
-            return(<Card updatehandler={this.props.updatehandler} deletehandler={this.props.deletehandler} clickhandler={this.props.clickhandler} key={item.id} id={item.id} votes={item.votes} name={item.name} pic={`https://robohash.org/${item.name}?200x200`} email={item.email}/>);
+                return(<Card updatehandler={this.onUpdateButtonClick} deletehandler={this.props.deletehandler} clickhandler={this.props.clickhandler} key={item.id} id={item.id} votes={item.votes} name={item.name} pic={`https://robohash.org/${item.name}?200x200`} email={item.email}/>);
         });
         return (
             <div>
@@ -13,6 +15,7 @@ class CardList extends Component
             </div>
         );
     }
+   
 }
 
 export default CardList;
