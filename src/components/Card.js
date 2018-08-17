@@ -15,7 +15,7 @@ class Card extends Component {
         if (this.state.isOpen)
         {
             return(
-                    <SuperstarForm />
+                    <SuperstarForm name={this.props.name} email={this.props.email} />
             );
         }
         else {
