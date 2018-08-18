@@ -7,7 +7,8 @@ class Card extends Component {
     constructor() {
         super();
         this.state = {
-           isOpen:false
+           isOpen:false,
+           isFlip:false
         }
     }
     render() {
@@ -19,8 +20,11 @@ class Card extends Component {
             );
         }
         else {
+            let classes = "tc bg-light-green dib br3 pa3 ma3 bw2 shadow-5 card";
+            classes += (this.state.isFlip) ? ' flip':'';
+            console.log(classes)
             return (
-                <div className="tc bg-light-green dib br3 pa3 ma3 bw2 shadow-5">
+                <div onClick={this.cardClickHandler} className={classes}>
                     <div>
                         <div className="deletediv">
                             <ActionButton clickhandler={this.deleteStar} btnText="X"/>
@@ -44,7 +48,11 @@ class Card extends Component {
         }
         
     }
-    
+    cardClickHandler = (event) => {
+        const isFlipped = this.state.isFlip;
+        this.setState({isFlip:!isFlipped});
+        console.log(this.state.isFlip);
+    }
     increaseVote = (event) => {
         this.props.clickhandler(this.props.id);
     };
