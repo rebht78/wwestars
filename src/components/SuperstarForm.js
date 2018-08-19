@@ -38,7 +38,7 @@ class SuperstarForm extends Component
                         </div>
                         
                             <div className="updatebtn">
-                                <ActionButton btnText={this.props.btnText} clickhandler={this.updateButtonClicked}/>
+                                <ActionButton btnText={this.props.btnText} clickhandler={this.operationButtonClicked}/>
                             </div>
                             <div>
                                 <ActionButton btnText="Cancel"/>
@@ -50,8 +50,9 @@ class SuperstarForm extends Component
             </div>
         );
     }
-    updateButtonClicked = () => {
+    operationButtonClicked = () => {
         alert("Name: "+this.state.name);
+        alert("Email: "+this.state.email);
     }
 }
 
