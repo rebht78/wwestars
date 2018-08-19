@@ -27,7 +27,7 @@ class SuperstarForm extends Component
             <div>
                 <div className="pa4 black-80">
                     <form className="measure center">
-                        <h2 className="f10 fw6 ph0 mh0">Update SuperStars</h2>
+                        <h2 className="f10 fw6 ph0 mh0">{this.props.title}</h2>
                         <div className="mt3">
                             <label className="db fw6 lh-copy f8">Name</label>
                             <input onChange={this.nameChange} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" defaultValue={this.props.name}/>
@@ -38,7 +38,7 @@ class SuperstarForm extends Component
                         </div>
                         
                             <div className="updatebtn">
-                                <ActionButton btnText="Update" clickhandler={this.updateButtonClicked}/>
+                                <ActionButton btnText={this.props.btnText} clickhandler={this.updateButtonClicked}/>
                             </div>
                             <div>
                                 <ActionButton btnText="Cancel"/>

@@ -5,6 +5,7 @@ import ScrollBar from '../components/ScrollBar';
 import ActionButton from '../components/ActionButton';
 // import {superstars} from '../model/superstars';
 import './App.css';
+import SuperstarForm from '../components/SuperstarForm';
 
 class App extends Component
 {
@@ -14,6 +15,7 @@ class App extends Component
             superstars:[],
             searchField:'',
             disabledButton:false,
+            isCreate:false
         }
     }
     componentDidMount() {
@@ -26,22 +28,28 @@ class App extends Component
         .then(superstars => this.setState({superstars:superstars}));
     }
     render() {
-        
-        const filteredSuperStar = this.state.superstars.filter((superstar) => {
-            return superstar.name.toLowerCase().includes(this.state.searchField.toLowerCase());
-        });
-        return (
-            <div className="tc">
-                <h1 className="heading">WWE Robot SuperStars</h1>
-                <div className="operationtab">
-                    <SearchBox filter={this.onInputChange}/>
-                    <ActionButton isdisable={this.state.disabledButton} clickhandler={this.onActionButtonClick} btnText="Create Robot Superstars" />
-                </div>
-                <ScrollBar>
-                    <CardList deletehandler={this.onDeleteButtonClick} superstars={filteredSuperStar} clickhandler={this.onVoteButtonClick}/>
-                </ScrollBar>
-            </div>  
-        );
+        if (this.state.isCreate) {
+            return (
+                <SuperstarForm title="Create Superstar" btnText="Add Superstar"/>
+            );
+        }
+        else {
+            const filteredSuperStar = this.state.superstars.filter((superstar) => {
+                return superstar.name.toLowerCase().includes(this.state.searchField.toLowerCase());
+            });
+            return (
+                <div className="tc">
+                    <h1 className="heading">WWE Robot SuperStars</h1>
+                    <div className="operationtab">
+                        <SearchBox filter={this.onInputChange}/>
+                        <ActionButton isdisable={this.state.disabledButton} clickhandler={this.onActionButtonClick} btnText="Create Robot Superstars" />
+                    </div>
+                    <ScrollBar>
+                        <CardList deletehandler={this.onDeleteButtonClick} superstars={filteredSuperStar} clickhandler={this.onVoteButtonClick}/>
+                    </ScrollBar>
+                </div>  
+            );
+        }
     }
     onVoteButtonClick = (value) => {
         const superstars = this.state.superstars;
@@ -70,7 +78,7 @@ class App extends Component
         this.setState({searchField: event.target.value});
     }
     onActionButtonClick = (event) => {
-        alert("Feature coming soon!, learning how to do that ;) ");
+        this.setState({isCreate:true});
     }
 }
 
