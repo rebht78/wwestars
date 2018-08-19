@@ -51,8 +51,24 @@ class SuperstarForm extends Component
         );
     }
     operationButtonClicked = () => {
-        alert("Name: "+this.state.name);
-        alert("Email: "+this.state.email);
+       fetch(
+           'http://localhost:3020/api/superstars', {
+        method:'POST',
+        headers: {
+            'Accept':'Application/json',
+            'content-type':'application/json'
+        },
+        body: JSON.stringify(
+            {
+                name:this.state.name,
+                email:this.state.email
+            }
+        )}
+     ).then(response => {
+         console.log(response);
+     }).then(data => {
+        console.log(data);
+     });
     }
 }
 
