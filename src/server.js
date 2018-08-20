@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
 const DATA_FILE = "./model/data.json";
+const superstars = require(DATA_FILE);
 
 const app = express();
 app.use(cors());
@@ -15,8 +16,17 @@ app.get("/api/superstars", function(req, res) {
 });
 
 app.post("/api/superstars", function(req,res){
-    console.log('Name: '+req.body.name);
-    console.log('Email: '+req.body.email);
-    res.send('Hey I got it!');
+   const newSuperstar = {
+       "id": superstars[superstars.length - 1].id + 1,
+       "name":req.body.name,
+       "email":req.body.email,
+       "votes":0
+   };
+
+   superstars.push(newSuperstar);
+
+   fs.writeFile(DATA_FILE,JSON.stringify(superstars),(err) => {
+        console.log(err);
+   });
 });
 app.listen(3020, () => console.log("I am started!"));
