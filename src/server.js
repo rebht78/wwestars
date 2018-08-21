@@ -26,7 +26,9 @@ app.post("/api/superstars", function(req,res){
    superstars.push(newSuperstar);
 
    fs.writeFile(DATA_FILE,JSON.stringify(superstars),(err) => {
-        console.log(err);
+        if (err) {
+            console.log(err);
+        }
    });
 });
 app.listen(3020, () => console.log("I am started!"));
