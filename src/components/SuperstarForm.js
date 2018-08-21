@@ -26,7 +26,7 @@ class SuperstarForm extends Component
         return (
             <div>
                 <div className="pa4 black-80">
-                    <form className="measure center">
+                    <form className="measure center" onSubmit={this.operationButtonClicked}>
                         <h2 className="f10 fw6 ph0 mh0">{this.props.title}</h2>
                         <div className="mt3">
                             <label className="db fw6 lh-copy f8">Name</label>
@@ -38,10 +38,10 @@ class SuperstarForm extends Component
                         </div>
                         
                             <div className="updatebtn">
-                                <ActionButton btnText={this.props.btnText} clickhandler={this.operationButtonClicked}/>
+                                <ActionButton btnType="submit" btnText={this.props.btnText}/>
                             </div>
                             <div>
-                                <ActionButton btnText="Cancel"/>
+                                <ActionButton btnType="reset" btnText="Reset"/>
                             </div>
                         
                        
@@ -50,7 +50,18 @@ class SuperstarForm extends Component
             </div>
         );
     }
-    operationButtonClicked = () => {
+    operationButtonClicked = (event) => {
+        event.preventDefault();
+        if (!this.state.name)
+        {
+            alert("Superstar Name cannot be left blank!");
+            return false;
+        }
+        else if (!this.state.email)
+        {
+            alert("Superstar Email cannot be left blank!");
+            return false;
+        }
        fetch(
            'http://localhost:3020/api/superstars', {
         method:'POST',
@@ -69,6 +80,7 @@ class SuperstarForm extends Component
      }).then(data => {
         console.log(data);
      });
+     return true;
     }
 }
 
