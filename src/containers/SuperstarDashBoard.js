@@ -7,7 +7,7 @@ import ActionButton from '../components/ActionButton';
 import './SuperstarDashBoard.css';
 import SuperstarForm from '../components/SuperstarForm';
 
-class App extends Component
+class SuperstarDashBoard extends Component
 {
     constructor() {
         super();
@@ -82,4 +82,4 @@ class App extends Component
     }
 }
 
-export default App;
+export default SuperstarDashBoard;
