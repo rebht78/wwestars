@@ -4,7 +4,7 @@ import SearchBox from '../components/SearchBox';
 import ScrollBar from '../components/ScrollBar';
 import ActionButton from '../components/ActionButton';
 // import {superstars} from '../model/superstars';
-import './App.css';
+import './SuperstarDashBoard.css';
 import SuperstarForm from '../components/SuperstarForm';
 
 class App extends Component
