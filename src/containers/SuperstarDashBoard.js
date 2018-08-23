@@ -39,7 +39,6 @@ class SuperstarDashBoard extends Component
             });
             return (
                 <div className="tc">
-                    <h1 className="heading">WWE Robot SuperStars</h1>
                     <div className="operationtab">
                         <SearchBox filter={this.onInputChange}/>
                         <ActionButton isdisable={this.state.disabledButton} clickhandler={this.onActionButtonClick} btnText="Create Robot Superstars" />
