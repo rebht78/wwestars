@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import ScrollBar from '../components/ScrollBar';
-// import {superstars} from '../model/superstars';
+import {superstars} from '../model/superstars';
 import './SuperstarDashBoard.css';
 import SuperstarForm from '../components/SuperstarForm';
 
@@ -18,13 +18,14 @@ class SuperstarDashBoard extends Component
         }
     }
     componentDidMount() {
-        fetch('http://localhost:3020/api/superstars', {
-            headers: {
-                Accept:'Application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(superstars => this.setState({superstars:superstars}));
+        // fetch('http://localhost:3020/api/superstars', {
+        //     headers: {
+        //         Accept:'Application/json'
+        //     }
+        // })
+        // .then(response => response.json())
+        // .then(superstars => this.setState({superstars:superstars}));
+        this.setState({superstars:superstars});
     }
     render() {
         if (this.state.isCreate) {

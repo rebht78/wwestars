@@ -35,7 +35,9 @@ class SuperstarForm extends Component
         return (
             <div>
                 <div className="pa4 black-80">
+                    
                     <form className="measure center" onSubmit={this.operationButtonClicked}>
+                        <p>In Demo, this feature is not working!</p>
                         <h2 className="f10 fw6 ph0 mh0">{this.props.title}</h2>
                         <div className="mt3">
                             <label className="db fw6 lh-copy f8">Name</label>
