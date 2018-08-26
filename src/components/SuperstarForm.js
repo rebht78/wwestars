@@ -23,6 +23,15 @@ class SuperstarForm extends Component
         this.setState({email: event.target.value});
     };
     render() {
+        let buttonText = "";
+        if (this.props.location.pathname === "/create")
+        {
+            buttonText = "Create Superstar";
+        }
+        else
+        {
+            buttonText = "Edit Superstar";
+        }
         return (
             <div>
                 <div className="pa4 black-80">
@@ -38,7 +47,7 @@ class SuperstarForm extends Component
                         </div>
                         
                             <div className="updatebtn">
-                                <ActionButton btnType="submit" btnText={this.props.btnText}/>
+                                <ActionButton btnType="submit" btnText={buttonText}/>
                             </div>
                             <div>
                                 <ActionButton btnType="reset" btnText="Reset"/>
