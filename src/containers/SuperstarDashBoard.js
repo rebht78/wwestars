@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import ScrollBar from '../components/ScrollBar';
-import ActionButton from '../components/ActionButton';
 // import {superstars} from '../model/superstars';
 import './SuperstarDashBoard.css';
 import SuperstarForm from '../components/SuperstarForm';
@@ -41,7 +40,6 @@ class SuperstarDashBoard extends Component
                 <div className="tc">
                     <div className="operationtab">
                         <SearchBox filter={this.onInputChange}/>
-                        <ActionButton isdisable={this.state.disabledButton} clickhandler={this.onActionButtonClick} btnText="Create Robot Superstars" />
                     </div>
                     <ScrollBar>
                         <CardList deletehandler={this.onDeleteButtonClick} superstars={filteredSuperStar} clickhandler={this.onVoteButtonClick}/>
