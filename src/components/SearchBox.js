@@ -7,7 +7,7 @@ class SearchBox extends Component
         return (
             <div className='pa2 searchdiv'>
                 <input
-                    className='pa3 ba b--green bg-lightest-blue"' 
+                    className='input-reset ba b--black-20 pa2 mb2 db w-100' 
                     type='search' 
                     placeholder='Search Robot Superstar'
                     onInput={this.props.filter}
