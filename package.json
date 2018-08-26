@@ -2,6 +2,7 @@
   "name": "wwestars",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://rebht78.github.io/wwestars",
   "dependencies": {
     "cors": "^2.8.4",
     "gh-pages": "^1.2.0",
